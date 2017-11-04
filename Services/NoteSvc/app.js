@@ -16,7 +16,10 @@ console.log("Testing, subject: " + subject + " content: " + content);
 //so far so good, now to move this note to the database.
 db.connect();
 //static query that passes nothing... Should be passing a note but forget it for now
-//db.query();
+db.query(() => {
+  console.log("closing db connection");
+  db.end();
+});
 //db.end();
 
 

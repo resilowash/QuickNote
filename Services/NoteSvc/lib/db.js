@@ -18,14 +18,15 @@ function connect() {
   });
 }
 
-function query() {
+function query(callback) {
   client.query(
-    'INSERT INTO notesapp.note(subject, content)VALUES("Test", "This is a test note") ', (err) => {
+    "INSERT INTO notesapp.note(subject, content)VALUES('Test', 'This is a test note') ", (err) => {
       if (err) {
         console.error('connection error', err.stack)
       } else {
         console.log('connected')
       }
+      callback();
     }
   );
 }
