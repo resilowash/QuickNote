@@ -18,9 +18,10 @@ function connect() {
   });
 }
 
-function query(callback) {
+function insertNote(subject, text, callback) {
+  var query = "INSERT INTO notesapp.note(subject, content)VALUES('" + subject + "', '" + text + "')";
   client.query(
-    "INSERT INTO notesapp.note(subject, content)VALUES('Test', 'This is a test note') ", (err) => {
+    query, (err) => {
       if (err) {
         console.error('connection error', err.stack)
       } else {
@@ -39,5 +40,5 @@ function end() {
 }
 
 module.exports.connect = connect;
-module.exports.query = query;
+module.exports.insertNote = insertNote;
 module.exports.end = end;
