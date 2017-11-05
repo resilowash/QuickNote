@@ -14,11 +14,13 @@ var content = process.argv[3];
 console.log("Testing, subject: " + subject + " content: " + content);
 
 //so far so good, now to move this note to the database.
-db.connect();
+//db.connect();
+var notedal = new db.NoteDAL('tcp://postgres@localhost:5432/notes');
+
 //static query that passes nothing... Should be passing a note but forget it for now
-db.insertNote(subject, content, () => {
+notedal.insertNote(subject, content, () => {
   console.log("closing db connection");
-  db.end();
+  notedal.end();
 });
 //db.end();
 
