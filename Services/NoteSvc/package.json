@@ -9,6 +9,7 @@
   "author": "R. Silowash",
   "license": "ISC",
   "dependencies": {
-    "pg": "^7.3.0"
+    "express": "4.16.2",
+    "pg": "7.3.0"
   }
 }
