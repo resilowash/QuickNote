@@ -7,11 +7,13 @@
 
 const Note = require("./lib/note.js");
 const db = require("./lib/db.js");
+const express = require('express');
 
 let subject = process.argv[2];
 let content = process.argv[3];
 
 console.log("Testing, subject: " + subject + " content: " + content);
+let note = new Note(subject, content, Date.now()); 
 
 //so far so good, now to move this note to the database.
 db.connect();
