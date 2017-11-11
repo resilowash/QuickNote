@@ -8,8 +8,8 @@
 const Note = require("./lib/note.js");
 const db = require("./lib/db.js");
 
-var subject = process.argv[2];
-var content = process.argv[3];
+let subject = process.argv[2];
+let content = process.argv[3];
 
 console.log("Testing, subject: " + subject + " content: " + content);
 
